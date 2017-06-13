@@ -12,9 +12,9 @@ Class connect {
 	* retorno: connection resource o false
 	* */
 	function __construct() {
-		global $baseDatos, $usuario;
+		global $baseDatos, $usuario, $host;
 		try {
-			$this->conn = pg_connect("dbname=$baseDatos user=$usuario") or die(1);
+			$this->conn = pg_connect("dbname=$baseDatos user=$usuario host=$host") or die(1);
 			return true;
 		}
 		catch(Exception $e) {

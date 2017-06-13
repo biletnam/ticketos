@@ -5,7 +5,7 @@
 *
 * */
 
-include("params.php");
+include("config.php");
 if(count($_GET) > count($_POST))
 	$_POST = $_GET;
 
