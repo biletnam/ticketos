@@ -21,7 +21,7 @@ class User {
 
 	public function crear($datos){
 		global $conn;
-		$conn->ejecutar("INSERT INTO users (codname, passwd, email, type, state) VALUES ('$datos[cod_name], '$datos[passwd]', '$datos[email]', '$datos[type]','$datos[state]')");
+		$conn->ejecutar("INSERT INTO users (codname, passwd, email, type, state) VALUES ('$datos[codname]', '$datos[passwd]', '$datos[email]', '$datos[type]','$datos[state]')");
 	}
 
 	public function borrar($datos){
@@ -31,7 +31,7 @@ class User {
 
 	public function modificar($datos){
 		global $conn;
-		$conn->ejecutar("UPDATE users SET codname=$datos[codname], passwd=$datos[passwd], email=$datos[email], type=$datos[type], state=$datos[state] WHERE id = $datos[id]");
+		$conn->ejecutar("UPDATE users SET codname='$datos[codname]', passwd='$datos[passwd]', email='$datos[email]', type='$datos[type]', state='$datos[state]' WHERE id = $datos[id]");
 	}
 }
 ?>

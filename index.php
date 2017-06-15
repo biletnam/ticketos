@@ -10,7 +10,7 @@ include("dao/route.php");
 
 include("control/$controlador.php");
 
-$objeto = new UsersControl;
+$objeto = new TicketsControl;
 
 $vista = $objeto->$accion();
 

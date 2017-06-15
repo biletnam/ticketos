@@ -31,27 +31,27 @@ class UsersControl {
 		$userModel = new User;
 		$userModel->crear($_POST);
 		$user = $userModel->listar();
-		return "inicio";
+		return "users";
 	}
 
 	public function borrar(){
 		$userModel = new User;
 		$userModel->borrar($_POST);
 		$user = $userModel->listar();
-		return "inicio";
+		return "users";
 	}
 
 	public function editar(){
 		$userModel = new User;
 		$userModel->buscar($_POST);
-		return "crear";
+		return "createuser";
 	}
 
 	public function guardar(){
 		$userModel = new User;
 		$userModel->modificar($_POST);
 		$user = $userModel->listar();
-		return "inicio";
+		return "users";
 	}
 }
 ?>

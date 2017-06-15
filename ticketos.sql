@@ -6,7 +6,7 @@ CREATE TABLE users(
 	passwd varchar(30),
 	email varchar(50),
 	type varchar(10),
-	estate char(1),
+	state char(1),
 	date_create date default date(now())
 );
 

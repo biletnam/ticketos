@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+$_SESSION['id_user_creator'] = 1;
+
+$id_user_creator = $_SESSION['id_user_creator'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,29 +29,25 @@
     <p>TicketOS</p>
         <form name="forma" class="form-horizontal" method="post">
           <fieldset>
-            <input type="hidden" name="id" class="form-control" value="<?php echo (isset($user)) ? $user['id'] : ""?>" />
+            <input type="hidden" name="id" value="<?php echo (isset($ticket)) ? $ticket['id'] : ""?>" />
+            <input type="hidden" name="id_user_creator" value="<?php echo (isset($id_user_creator)) ? $ticket['id_user_creator'] : ""?>" />
+
             <div class="form-group">
-              <label class="col-md-4 control-label" for="codname">Codigo Usuario:</label>
+              <label class="col-md-4 control-label" for="name">Title</label>
               <div class="col-md-4">
-                  <input type="text" name="codname" class="form-control" value="<?php echo (isset($user)) ? $user['codname'] : ""?>" />
+                  <input type="text" name="name" class="form-control" value="<?php echo (isset($ticket)) ? $ticket['name'] : ""?>" />
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="passwd">Contraseña Usuario:</label>
+              <label class="col-md-4 control-label" for="description">Description</label>
               <div class="col-md-4">
-                  <input type="text" name="passwd" class="form-control" value="<?php echo (isset($user)) ? $user['passwd'] : ""?>" />
+                  <textarea class="form-control" id="description" name="description"><?php echo (isset($ticket)) ? $ticket['description'] : ""?></textarea>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="email">Email:</label>
+              <label class="col-md-4 control-label" for="id_user_resolv">Perfil</label>
               <div class="col-md-4">
-                  <input type="text" name="email" class="form-control" value="<?php echo (isset($user)) ? $user['email'] : ""?>" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="type">Perfil</label>
-              <div class="col-md-4">
-                <select id="reto" name="type" class="form-control">
+                <select id="reto" name="id_user_resolv" class="form-control">
                   <option value="admin">Administrador</option>
                   <option value="soporte">Soporte</option>
                   <option value="cliente">Cliente</option>
@@ -66,7 +68,7 @@
                 <label class="col-md-4 control-label" for="continuar"></label>
                 <input type="button" class="btn btn-primary" value="Volver" onclick="location='?v=inicio'" />
                 <input type="button" class="btn btn-primary"  value="Guardar" onclick="valida(this.form)" />
-                <input type="hidden" class="btn btn-primary"  name="v" value="<?php echo (isset($user)) ? "guardar" : "inserta"?>" />
+                <input type="hidden" class="btn btn-primary"  name="v" value="<?php echo (isset($ticket)) ? "guardar" : "inserta"?>" />
               </div>
             </div>
           </fieldset>
