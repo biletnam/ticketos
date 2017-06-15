@@ -9,6 +9,6 @@ PostgreSQL >= 8.4
 
 ## Instrucciones de Instalacion
 
-1. Ejecutar el script tickets.sql
+1. Ejecutar el script ticketos.sql
 2. Copiar el repositorio en el directorio del servidor de aplicación
 3. Editar el archivo config.
