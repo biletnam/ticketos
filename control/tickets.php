@@ -4,8 +4,9 @@
 *
 * */
 
-include("model/tickets.php");
 include("model/users.php");
+include("model/tickets.php");
+
 
 class TicketsControl {
 	private $tabla = "tickets";
@@ -24,7 +25,7 @@ class TicketsControl {
 	* funcion que muestra el formulario para crear users
 	* retorno: string con la vista a cargar
 	* */
-	public function createuser(){
+	public function createticket(){
 		return "createtickets";
 	}
 
@@ -52,14 +53,14 @@ class TicketsControl {
 		$ticketModel = new Ticket;
 		$ticketModel->modificar($_POST);
 		$ticket = $ticketModel->listar();
-		return "ticket";
+		return "tickets";
 	}
 
 	public function seguimiento(){
 		$ticketModel = new Ticket;
-		$ticketModel->seguimiento($_POST);
-		$ticket = $ticketModel->listarSeguimiento();
-		return "ticket";
+		//$ticketModel->seguimiento($_POST);
+		//$ticket = $ticketModel->listarSeguimiento();
+		return "tickets";
 	}
 
 

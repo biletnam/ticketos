@@ -35,12 +35,15 @@
                      <td><?php echo $value['description']?></td>
                      <td><?php echo $value['date_submit']?></td>
                      <td><?php echo $value['priority']?></td>
-                     <td><?php echo $value['id_user_resolv']?></td>
-                     <td> <a href="#" onclick="location='?v=editar&id=<?php echo $value['id']?>'">Edit</a> | <a href="#" onclick="location='?v=borrar&id=<?php echo $value['id']?>'">Delete</a> </td>
+                     <td><?php echo $value['id_user_resolve']?></td>
+                     <td>
+                          <a href="#" onclick="location='?c=tickets&v=seguimiento&id=<?php echo $value['id']?>'">Add Note</a>
+                     </td>
                  </tr>
                  <?php } ?>
              </tbody>
         </table>
-        <input type="button" value="New" class="btn btn-primary" onclick="location='?v=createuser'" />
+        <input type="button" value="Init" class="btn btn-primary" onclick="location='?c=init&v=index'" />
+        <input type="button" value="New Ticket" class="btn btn-primary" onclick="location='?c=tickets&v=createticket'" />
   </body>
 </html>

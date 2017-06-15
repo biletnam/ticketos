@@ -1,6 +1,6 @@
 <?php
 
-include("dao/connect.php");
+//include("dao/connect.php");
 
 $conn = new connect;
 
@@ -21,7 +21,7 @@ class Ticket {
 
 	public function crear($datos){
 		global $conn;
-		$conn->ejecutar("INSERT INTO tickets (name, description, priority, id_user_creator, id_user_resolv) VALUES ('$datos[name]', '$datos[description]', '$datos[priority]', '$datos[id_user_creator]', '$datos[id_user_resolv]')");
+		$conn->ejecutar("INSERT INTO tickets (name, description, priority, id_user_creator, id_user_resolve) VALUES ('$datos[name]', '$datos[description]', $datos[priority], $datos[id_user_creator], $datos[id_user_resolve])");
 	}
 
 	public function modificar($datos){

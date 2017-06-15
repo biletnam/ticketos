@@ -25,15 +25,15 @@
           <fieldset>
             <input type="hidden" name="id" class="form-control" value="<?php echo (isset($user)) ? $user['id'] : ""?>" />
             <div class="form-group">
-              <label class="col-md-4 control-label" for="codname">Codigo Usuario:</label>
+              <label class="col-md-4 control-label" for="codname">User</label>
               <div class="col-md-4">
                   <input type="text" name="codname" class="form-control" value="<?php echo (isset($user)) ? $user['codname'] : ""?>" />
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="passwd">Contraseña Usuario:</label>
+              <label class="col-md-4 control-label" for="passwd">Password</label>
               <div class="col-md-4">
-                  <input type="text" name="passwd" class="form-control" value="<?php echo (isset($user)) ? $user['passwd'] : ""?>" />
+                  <input type="password" name="passwd" class="form-control" value="<?php echo (isset($user)) ? $user['passwd'] : ""?>" />
               </div>
             </div>
             <div class="form-group">
@@ -43,29 +43,30 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="type">Perfil</label>
+              <label class="col-md-4 control-label" for="type">Type</label>
               <div class="col-md-4">
                 <select id="reto" name="type" class="form-control">
-                  <option value="admin">Administrador</option>
-                  <option value="soporte">Soporte</option>
-                  <option value="cliente">Cliente</option>
+                  <option value="admin">Administrator</option>
+                  <option value="soporte">Support</option>
+                  <option value="cliente">Customer</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="state">Estado</label>
+              <label class="col-md-4 control-label" for="state">State</label>
               <div class="col-md-4">
                 <select id="reto" name="state" class="form-control">
-                  <option value="A">Abierto</option>
-                  <option value="C">Cerrado</option>
+                  <option value="A">Open</option>
+                  <option value="C">Closed</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-4">
                 <label class="col-md-4 control-label" for="continuar"></label>
-                <input type="button" class="btn btn-primary" value="Volver" onclick="location='?v=inicio'" />
-                <input type="button" class="btn btn-primary"  value="Guardar" onclick="valida(this.form)" />
+                <input type="button" class="btn btn-primary" value="Back" onclick="location='?c=users&v=inicio'" />
+                <input type="button" class="btn btn-primary"  value="Save" onclick="valida(this.form)" />
+                <input type="hidden" class="btn btn-primary"  name="c" value="users" />
                 <input type="hidden" class="btn btn-primary"  name="v" value="<?php echo (isset($user)) ? "guardar" : "inserta"?>" />
               </div>
             </div>

@@ -6,11 +6,15 @@
 * */
 
 
-include("dao/route.php");
+include("route.php");
 
 include("control/$controlador.php");
 
-$objeto = new TicketsControl;
+$className = ucfirst($controlador) . "Control";
+
+
+
+$objeto = new $className;
 
 $vista = $objeto->$accion();
 

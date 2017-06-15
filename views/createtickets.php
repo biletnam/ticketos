@@ -26,11 +26,10 @@ $id_user_creator = $_SESSION['id_user_creator'];
     </script>
   </head>
   <body>
-    <p>TicketOS</p>
         <form name="forma" class="form-horizontal" method="post">
           <fieldset>
             <input type="hidden" name="id" value="<?php echo (isset($ticket)) ? $ticket['id'] : ""?>" />
-            <input type="hidden" name="id_user_creator" value="<?php echo (isset($id_user_creator)) ? $ticket['id_user_creator'] : ""?>" />
+            <input type="hidden" name="id_user_creator" value="<?php echo $id_user_creator;?>" />
 
             <div class="form-group">
               <label class="col-md-4 control-label" for="name">Title</label>
@@ -45,32 +44,37 @@ $id_user_creator = $_SESSION['id_user_creator'];
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="id_user_resolv">Perfil</label>
+              <label class="col-md-4 control-label" for="priority">Priority</label>
               <div class="col-md-4">
-                <select id="reto" name="id_user_resolv" class="form-control">
-                  <option value="admin">Administrador</option>
-                  <option value="soporte">Soporte</option>
-                  <option value="cliente">Cliente</option>
+                <select id="reto" name="priority" class="form-control">
+                  <option value="1">Critical</option>
+                  <option value="2">High</option>
+                  <option value="3">Low</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="state">Estado</label>
+              <label class="col-md-4 control-label" for="id_user_resolve">Assigned User</label>
               <div class="col-md-4">
-                <select id="reto" name="state" class="form-control">
-                  <option value="A">Abierto</option>
-                  <option value="C">Cerrado</option>
+                <select id="reto" name="id_user_resolve" class="form-control">
+                  <option value="1">User 1</option>
+                  <option value="2">User 2</option>
+                  <option value="3">User 3</option>
                 </select>
               </div>
             </div>
+            <!-- Button -->
             <div class="form-group">
+              <label class="col-md-4 control-label" for="continuar"></label>
               <div class="col-md-4">
-                <label class="col-md-4 control-label" for="continuar"></label>
-                <input type="button" class="btn btn-primary" value="Volver" onclick="location='?v=inicio'" />
-                <input type="button" class="btn btn-primary"  value="Guardar" onclick="valida(this.form)" />
+                <button id="continuar" name="volver" class="btn btn-primary"  onclick="location='?c=tickets&v=inicio'">Back</button>
+                <button id="continuar" name="guardar" class="btn btn-primary"  onclick="valida(this.form)">Save</button>
+                <input type="hidden" class="btn btn-primary"  name="c" value="tickets" />
                 <input type="hidden" class="btn btn-primary"  name="v" value="<?php echo (isset($ticket)) ? "guardar" : "inserta"?>" />
               </div>
             </div>
+
+
           </fieldset>
         </form>
   </body>

@@ -32,11 +32,12 @@
                      <td><?php echo $value['codname']?></td>
                      <td><?php echo $value['email']?></td>
                      <td><?php echo $value['date_create']?></td>
-                     <td> <a href="#" onclick="location='?v=editar&id=<?php echo $value['id']?>'">Edit</a> | <a href="#" onclick="location='?v=borrar&id=<?php echo $value['id']?>'">Delete</a> </td>
+                     <td> <a href="#" onclick="location='?c=users&v=editar&id=<?php echo $value['id']?>'">Edit</a> | <a href="#" onclick="location='?c=users&v=borrar&id=<?php echo $value['id']?>'">Delete</a> </td>
                  </tr>
                  <?php } ?>
              </tbody>
         </table>
-        <input type="button" value="New" class="btn btn-primary" onclick="location='?v=createuser'" />
+        <input type="button" value="Init" class="btn btn-primary" onclick="location='?c=init&v=index'" />
+        <input type="button" value="New User" class="btn btn-primary" onclick="location='?c=users&v=createuser'" />
   </body>
 </html>
